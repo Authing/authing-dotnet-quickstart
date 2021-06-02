@@ -41,19 +41,39 @@
           "dependencies": {
             "Authing.ApiClient": {
               "target": "Package",
-              "version": "[4.2.4.1, )"
+              "version": "[4.2.4.8, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.6, )"
             },
             "Microsoft.AspNetCore.Session": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.11.1, )"
+            },
             "NetDevPack.Security.Jwt": {
               "target": "Package",
               "version": "[5.0.9, )"
             },
+            "NetDevPack.Security.JwtExtensions": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Opw.HttpExceptions.AspNetCore": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.11.1, )"
             }
           },
           "imports": [

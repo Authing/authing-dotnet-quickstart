@@ -44,3 +44,9 @@
 /home/shubuzuo/code/work/authing/csharp/quickstart/obj/Debug/net5.0/ref/quickstart.dll
 /home/shubuzuo/code/work/authing/csharp/quickstart/obj/Debug/net5.0/quickstart.pdb
 /home/shubuzuo/code/work/authing/csharp/quickstart/obj/Debug/net5.0/quickstart.genruntimeconfig.cache
+/home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/Opw.HttpExceptions.dll
+/home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/Opw.HttpExceptions.AspNetCore.dll
+/home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
+/home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/NetDevPack.Security.JwtExtensions.dll

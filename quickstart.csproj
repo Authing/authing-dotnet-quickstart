@@ -6,9 +6,14 @@
     <RestoreSources>$(RestoreSources);/home/shubuzuo/code/work/authing/authing-csharp-sdk/src/Authing.ApiClient/bin/Debug;https://api.nuget.org/v3/index.json</RestoreSources>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Authing.ApiClient" Version="4.2.4.1" />
+    <PackageReference Include="Authing.ApiClient" Version="4.2.4.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.6" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.11.1" />
     <PackageReference Include="NetDevPack.Security.Jwt" Version="5.0.9" />
+    <PackageReference Include="NetDevPack.Security.JwtExtensions" Version="5.0.1" />
+    <PackageReference Include="Opw.HttpExceptions.AspNetCore" Version="3.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.1" />
   </ItemGroup>
 </Project>

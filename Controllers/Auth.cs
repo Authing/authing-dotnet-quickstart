@@ -3,10 +3,13 @@ using System.Threading.Tasks;
 using Authing.ApiClient.Auth;
 using Authing.ApiClient.Auth.Types;
 using Authing.ApiClient.Types;
-using Authing.ApiClient.Utils;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
+using Opw.HttpExceptions;
+
 
 namespace quickstart.Controllers
 {
@@ -15,12 +18,15 @@ namespace quickstart.Controllers
     public class AuthController : ControllerBase
     {
         private readonly AuthenticationClient _authenticationClient;
+        private readonly IConfiguration _configuration;
+
         // private readonly IJsonWebKeySetService _jwksService;
         // IJsonWebKeySetService jwksService
 
-        public AuthController(AuthenticationClient authenticationClient)
+        public AuthController(AuthenticationClient authenticationClient, IConfiguration configuration)
         {
             _authenticationClient = authenticationClient;
+            _configuration = configuration;
             // _jwksService = jwksService;
         }
 
@@ -43,13 +49,11 @@ namespace quickstart.Controllers
         [Route("login")]
         public string GetLoginUrl()
         {
-            var oauthOption = new OauthOption
+            var oauthOption = new OidcOption
             {
-                AppId = "AppId",
-                RedirectUri = "RedirectUri",
-                ResponseType = OauthResponseType.CODE,
+                AppId = _configuration["Authing.Config:AppId"],
+                RedirectUri = _configuration["Authing.Config:RedirectUri"],
                 State = "state",
-                // Scope = "",
             };
             var loginUri = _authenticationClient.BuildAuthorizeUrl(oauthOption);
             return loginUri;
@@ -57,17 +61,36 @@ namespace quickstart.Controllers
 
         [HttpGet]
         [Route("callback")]
-        public async Task<RedirectResult> HandleCallback([FromQuery] string Code)
+        public async Task<object> HandleCallback([FromQuery] string Code)
         {
-            string token = "";
-            if (!string.IsNullOrEmpty(Code))
+            if (Code == null)
             {
-                var tokenInfo = (await _authenticationClient.GetAccessTokenByCode(Code)).Convert<CodeToTokenRes>();
-                token = tokenInfo.AccessToken;
+                return new BadRequestException("code 无效");
             }
-            var userInfo = (await _authenticationClient.GetUserInfoByAccessToken(token)).Convert<User>();
+            CodeToTokenRes tokenInfo;
+            try
+            {
+                tokenInfo = await _authenticationClient.GetAccessTokenByCode(Code);
+            }
+            catch (Exception)
+            {
+                throw new BadRequestException("code 无效");
+            }
+            var token = tokenInfo.AccessToken;
+            UserInfo userInfo;
+            try
+            {
+                userInfo = await _authenticationClient.GetUserInfoByAccessToken(token);
+                userInfo.Token = token;
+            }
+            catch (Exception)
+            {
+                throw new BadRequestException("token 无效"); ;
+            }
             HttpContext.Session.Set("user", userInfo);
-            return Redirect("/");
+            var _userInfo = HttpContext.Session.Get<UserInfo>("user");
+            Console.WriteLine(_userInfo);
+            return Redirect("/auth/profile");
         }
 
         [HttpGet]
@@ -86,13 +109,16 @@ namespace quickstart.Controllers
 
         [HttpGet]
         [Route("profile")]
+        [Produces("application/json")]
         public object GetUserInfo()
         {
-            if (HttpContext.Session.Get<User>("user") != null)
+
+            if (HttpContext.Session.Get<UserInfo>("user") != null)
             {
-                return Redirect("/login");
+                var userInfo = HttpContext.Session.Get<UserInfo>("user");
+                return userInfo;
             }
-            return HttpContext.Session.Get<User>("user");
+            return Redirect("/auth/login");
         }
     }
 }
