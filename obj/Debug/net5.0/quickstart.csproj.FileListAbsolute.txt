@@ -50,3 +50,6 @@
 /home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
 /home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/NetDevPack.Security.JwtExtensions.dll
+/home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/AspNet.Security.OpenIdConnect.Extensions.dll
+/home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/AspNet.Security.OpenIdConnect.Primitives.dll
+/home/shubuzuo/code/work/authing/csharp/quickstart/bin/Debug/net5.0/AspNet.Security.OpenIdConnect.Server.dll

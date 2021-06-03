@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace quickstart.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class WeatherForecastController
     {
         private static readonly string[] Summaries = new[]

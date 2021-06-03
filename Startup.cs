@@ -15,6 +15,8 @@ using Opw.HttpExceptions.AspNetCore;
 using quickstart.Utils;
 using NetDevPack.Security.JwtExtensions;
 using NetDevPack.Security.JwtSigningCredentials;
+using Microsoft.IdentityModel.Protocols;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 namespace quickstart
 {
@@ -32,17 +34,14 @@ namespace quickstart
         {
 
             // dotnet add package NetDevPack.Security.Jwt
-            services.AddJwksManager(o =>
-                {
-                    o.Jws = JwsAlgorithm.RS256;
-                });
-            services.AddMvc().AddHttpExceptions();
+            // services.AddJwksManager(o =>
+            //     {
+            //         o.Jws = JwsAlgorithm.RS256;
+            //     });
 
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                options.CheckConsentNeeded = context => false;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
+            services.AddControllers();
+
+            services.AddMvc().AddHttpExceptions();
 
             //启用内存缓存(该步骤需在AddSession()调用前使用)
             services.AddDistributedMemoryCache();//启用session之前必须先添加内存
@@ -65,8 +64,8 @@ namespace quickstart
                 options.TokenEndPointAuthMethod = TokenEndPointAuthMethod.CLIENT_SECRET_POST;
                 options.Protocol = Protocol.OIDC;
             });
+
             services.AddSingleton(typeof(AuthenticationClient), authenticationClient);
-            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "quickstart", Version = "v1" });
@@ -76,6 +75,16 @@ namespace quickstart
             //将配置绑定到JwtSettings实例中
             var jwtSettings = new JwtSettings();
             Configuration.Bind("JwtSettings", jwtSettings);
+
+            // var configurationManager = new ConfigurationManager<OpenIdConnectConfiguration>(
+            //     // .well-known/oauth-authorization-server or .well-known/openid-configuration
+            //     "https://1409458062aaa.authing.cn/oidc/.well-known/openid-configuration",
+            //     new OpenIdConnectConfigurationRetriever(),
+            //     new HttpDocumentRetriever()
+            // );
+
+            // var discoveryDocument = await configurationManager.GetConfigurationAsync();
+            // var signingKeys = discoveryDocument.SigningKeys;
 
             services.AddAuthentication(options =>
             {
@@ -90,6 +99,7 @@ namespace quickstart
                 {
                     //Token颁发机构
                     ValidIssuer = jwtSettings.Issuer,
+                    // ValidateIssuerSigningKey = true,
                     //颁发给谁
                     ValidAudience = jwtSettings.Audience,
                     //这里的key要进行加密，需要引用Microsoft.IdentityModel.Tokens
@@ -99,13 +109,15 @@ namespace quickstart
                     // ValidateLifetime = true,
                     //允许的服务器时间偏移量
                     // ClockSkew = TimeSpan.Zero,
-                    ValidAlgorithms = new string [] { "RS256" },
+                    ValidAlgorithms = new string[] { "RS256" },
+                    // IssuerSigningKeys = signingKeys,
                 };
                 o.RequireHttpsMetadata = false;
-                o.SaveToken = true;
+                o.SaveToken = false;
                 o.IncludeErrorDetails = true;
                 o.SetJwksOptions(new JwkOptions(jwtSettings.JwksUri, jwtSettings.Issuer, new TimeSpan(TimeSpan.TicksPerDay)));
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

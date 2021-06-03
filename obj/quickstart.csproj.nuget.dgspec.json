@@ -39,6 +39,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AspNet.Security.OpenIdConnect.Extensions": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "AspNet.Security.OpenIdConnect.Server": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "Authing.ApiClient": {
               "target": "Package",
               "version": "[4.2.4.8, )"
@@ -50,6 +58,10 @@
             "Microsoft.AspNetCore.Session": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Microsoft.IdentityModel.Protocols.OpenIdConnect": {
+              "target": "Package",
+              "version": "[6.11.1, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
