@@ -24,7 +24,7 @@ namespace quickstart.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "openid")]
+        [Authorize]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

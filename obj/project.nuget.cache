@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Dbwv1ZH7ESKp//gRklx9nepH7QjFNI3BXTjHy1/nvu3fMYNjq/hprUSgPFbj+B3fjOHRWDFjenBy4GHh9HZgxQ==",
+  "dgSpecHash": "H+IPj32tQbx79VSe/jRY6z8C8uE1/NUTQsHOVdvW6YB2sEYgIrxh5wk7QBSXefZ747ZNHceVKpExRDHEgy80yQ==",
   "success": true,
   "projectFilePath": "/home/shubuzuo/code/work/authing/csharp/quickstart/quickstart.csproj",
   "expectedPackageFiles": [
     "/home/shubuzuo/.nuget/packages/aspnet.security.openidconnect.extensions/2.0.0/aspnet.security.openidconnect.extensions.2.0.0.nupkg.sha512",
     "/home/shubuzuo/.nuget/packages/aspnet.security.openidconnect.primitives/2.0.0/aspnet.security.openidconnect.primitives.2.0.0.nupkg.sha512",
-    "/home/shubuzuo/.nuget/packages/aspnet.security.openidconnect.server/2.0.0/aspnet.security.openidconnect.server.2.0.0.nupkg.sha512",
     "/home/shubuzuo/.nuget/packages/authing.apiclient/4.2.4.8/authing.apiclient.4.2.4.8.nupkg.sha512",
     "/home/shubuzuo/.nuget/packages/flurl/3.0.1/flurl.3.0.1.nupkg.sha512",
     "/home/shubuzuo/.nuget/packages/flurl.http/3.0.1/flurl.http.3.0.1.nupkg.sha512",
@@ -18,8 +17,6 @@
     "/home/shubuzuo/.nuget/packages/microsoft.aspnetcore.cryptography.internal/5.0.6/microsoft.aspnetcore.cryptography.internal.5.0.6.nupkg.sha512",
     "/home/shubuzuo/.nuget/packages/microsoft.aspnetcore.dataprotection/5.0.6/microsoft.aspnetcore.dataprotection.5.0.6.nupkg.sha512",
     "/home/shubuzuo/.nuget/packages/microsoft.aspnetcore.dataprotection.abstractions/5.0.6/microsoft.aspnetcore.dataprotection.abstractions.5.0.6.nupkg.sha512",
-    "/home/shubuzuo/.nuget/packages/microsoft.aspnetcore.hosting.abstractions/2.0.0/microsoft.aspnetcore.hosting.abstractions.2.0.0.nupkg.sha512",
-    "/home/shubuzuo/.nuget/packages/microsoft.aspnetcore.hosting.server.abstractions/2.0.0/microsoft.aspnetcore.hosting.server.abstractions.2.0.0.nupkg.sha512",
     "/home/shubuzuo/.nuget/packages/microsoft.aspnetcore.http/2.0.0/microsoft.aspnetcore.http.2.0.0.nupkg.sha512",
     "/home/shubuzuo/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "/home/shubuzuo/.nuget/packages/microsoft.aspnetcore.http.extensions/2.0.0/microsoft.aspnetcore.http.extensions.2.0.0.nupkg.sha512",

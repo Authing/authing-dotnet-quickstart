@@ -99,7 +99,6 @@ namespace quickstart
                 {
                     //Token颁发机构
                     ValidIssuer = jwtSettings.Issuer,
-                    // ValidateIssuerSigningKey = true,
                     //颁发给谁
                     ValidAudience = jwtSettings.Audience,
                     //这里的key要进行加密，需要引用Microsoft.IdentityModel.Tokens
