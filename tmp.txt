@@ -1,0 +1,18 @@
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddControllers();
+    services.AddMvc().AddHttpExceptions();
+
+    //启用内存缓存(该步骤需在AddSession()调用前使用)
+    services.AddDistributedMemoryCache();//启用session之前必须先添加内存
+    //services.AddSession();
+    services.AddSession(options =>
+    {
+        options.Cookie.Name = "This.Session";
+        options.IdleTimeout = TimeSpan.FromSeconds(2000);//设置session的过期时间
+        options.Cookie.HttpOnly = true;//设置在浏览器不能通过js获得该cookie的值
+        options.Cookie.IsEssential = true;
+    });
+
+    // ------
+}

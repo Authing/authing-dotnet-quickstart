@@ -1,11 +1,9 @@
 using System;
-using System.Text;
 using Authing.ApiClient.Auth;
 using Authing.ApiClient.Auth.Types;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -14,9 +12,6 @@ using Microsoft.OpenApi.Models;
 using Opw.HttpExceptions.AspNetCore;
 using quickstart.Utils;
 using NetDevPack.Security.JwtExtensions;
-using NetDevPack.Security.JwtSigningCredentials;
-using Microsoft.IdentityModel.Protocols;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 namespace quickstart
 {
@@ -48,7 +43,7 @@ namespace quickstart
                                                  //services.AddSession();
             services.AddSession(options =>
             {
-                options.Cookie.Name = ".AdventureWorks.Session";
+                options.Cookie.Name = "This.Session";
                 options.IdleTimeout = TimeSpan.FromSeconds(2000);//设置session的过期时间
                 options.Cookie.HttpOnly = true;//设置在浏览器不能通过js获得该cookie的值
                 options.Cookie.IsEssential = true;

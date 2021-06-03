@@ -11,6 +11,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.6" />
     <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="6.11.1" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.11.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="NetDevPack.Security.Jwt" Version="5.0.9" />
     <PackageReference Include="NetDevPack.Security.JwtExtensions" Version="5.0.1" />
     <PackageReference Include="Opw.HttpExceptions.AspNetCore" Version="3.0.2" />
