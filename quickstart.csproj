@@ -3,11 +3,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <PropertyGroup>
-    <RestoreSources>$(RestoreSources);/home/shubuzuo/code/work/authing/authing-csharp-sdk/src/Authing.ApiClient/bin/Debug;https://api.nuget.org/v3/index.json</RestoreSources>
+    <RestoreSources>$(RestoreSources);https://api.nuget.org/v3/index.json</RestoreSources>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AspNet.Security.OpenIdConnect.Extensions" Version="2.0.0" />
-    <PackageReference Include="Authing.ApiClient" Version="4.2.4.8" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.6" />
     <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="6.11.1" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.11.1" />
