@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7ktgtTgxTYLp5tnoZzcQDGnLB8M+p1djeQFZks88oGjsyJlYVvpQxbbTXwpBBKBMgfPgpHIg0jKsv5jhmikqNQ==",
+  "dgSpecHash": "cJcDWG4dchegp6KFAfjU4n7cANo8qas/wP+iPSRRVvWFxPoLoNPVGgz3AhzhYI2A4scABHu0Od04F1BhAmKSZg==",
   "success": true,
-  "projectFilePath": "/home/shubuzuo/code/work/authing/csharp/quickstart/quickstart.csproj",
+  "projectFilePath": "/home/shubuzuo/code/work/authing/authing-quick-start/quickstart.csproj",
   "expectedPackageFiles": [
     "/home/shubuzuo/.nuget/packages/aspnet.security.openidconnect.extensions/2.0.0/aspnet.security.openidconnect.extensions.2.0.0.nupkg.sha512",
     "/home/shubuzuo/.nuget/packages/aspnet.security.openidconnect.primitives/2.0.0/aspnet.security.openidconnect.primitives.2.0.0.nupkg.sha512",

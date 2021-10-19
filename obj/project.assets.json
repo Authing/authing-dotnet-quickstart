@@ -8639,11 +8639,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/shubuzuo/code/work/authing/csharp/quickstart/quickstart.csproj",
+      "projectUniqueName": "/home/shubuzuo/code/work/authing/authing-quick-start/quickstart.csproj",
       "projectName": "quickstart",
-      "projectPath": "/home/shubuzuo/code/work/authing/csharp/quickstart/quickstart.csproj",
+      "projectPath": "/home/shubuzuo/code/work/authing/authing-quick-start/quickstart.csproj",
       "packagesPath": "/home/shubuzuo/.nuget/packages/",
-      "outputPath": "/home/shubuzuo/code/work/authing/csharp/quickstart/obj/",
+      "outputPath": "/home/shubuzuo/code/work/authing/authing-quick-start/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/shubuzuo/.nuget/NuGet/NuGet.Config"
@@ -8738,7 +8738,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
       }
     }
   }
