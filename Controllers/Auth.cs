@@ -72,7 +72,7 @@ namespace quickstart.Controllers
                 throw new BadRequestException("code 无效");
             }
             var token = tokenInfo.AccessToken;
-            UserInfo userInfo;
+            User userInfo;
             try
             {
                 // 通过 Token 获取用户信息，错误的 Token 可能会导致异常
@@ -116,10 +116,10 @@ namespace quickstart.Controllers
         public object GetUserInfo()
         {
             // 考虑到 userInfo 是存储到 Session 中，如果 Session 中没有 userInfo 则代表用户没有进行登录
-            if (HttpContext.Session.Get<UserInfo>("user") != null)
+            if (HttpContext.Session.Get<User>("user") != null)
             {
                 // 从 Session 中获取 userInfo 并返回
-                var userInfo = HttpContext.Session.Get<UserInfo>("user");
+                var userInfo = HttpContext.Session.Get<User>("user");
                 return userInfo;
             }
             // 如果用户没有进行登录，则跳转到 /auth/login 进行登录
