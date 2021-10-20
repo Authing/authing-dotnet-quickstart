@@ -29,7 +29,7 @@ $ dotnet restore
   // .Net Core Web API Server 快速开始
   "JwtSettings": {
     // "Issuer": "https://{你的域名}.authing.cn/oidc",
-    // "Audience": "60b847b52cd547f747a4cfe8",
+    // "Audience": "APP_ID",
     // "JwksUri": "https://{你的域名}.authing.cn/oidc/.well-known/jwks"
   }
 }
