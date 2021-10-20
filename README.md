@@ -10,7 +10,7 @@ $ dotnet restore
 
 在 appsettings.Development.json 中，修改配置为你的应用配置：
 
-```jsonc
+```jsonc {10-15}
 {
   "Logging": {
     "LogLevel": {
