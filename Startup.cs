@@ -1,6 +1,6 @@
 using System;
-using Authing.ApiClient.Auth;
-using Authing.ApiClient.Auth.Types;
+using Authing.ApiClient.Domain.Client.Impl.AuthenticationClient;
+using Authing.ApiClient.Types;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -52,12 +52,9 @@ namespace quickstart
             var authenticationClient = new AuthenticationClient(options =>
             {
                 options.AppId = Configuration["Authing.Config:AppId"];
-                // options.AppId = Configuration["Authing.Config:AppId"];
-                options.Host = Configuration["Authing.Config:AppHost"];
-                options.Secret = Configuration["Authing.Config:Secret"];
+                options.AppHost = Configuration["Authing.Config:AppHost"];
                 options.RedirectUri = Configuration["Authing.Config:RedirectUri"];
-                options.TokenEndPointAuthMethod = TokenEndPointAuthMethod.CLIENT_SECRET_POST;
-                options.Protocol = Protocol.OIDC;
+                options.Secret = Configuration["Authing.Config:Secret"];
             });
 
             services.AddSingleton(typeof(AuthenticationClient), authenticationClient);
