@@ -24,7 +24,7 @@ namespace quickstart.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize(Policy = "WeatherForecast:read")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

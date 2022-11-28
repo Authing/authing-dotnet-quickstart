@@ -109,6 +109,14 @@ namespace quickstart
                 o.SetJwksOptions(new JwkOptions(jwtSettings.JwksUri, jwtSettings.Issuer, new TimeSpan(TimeSpan.TicksPerDay)));
             });
 
+            services.AddAuthorization(options =>
+                {
+                    options.AddPolicy(
+                        "WeatherForecast:read",
+                        policy => policy.RequireClaim("scope", "WeatherForecast:read"));
+                }
+            );
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
